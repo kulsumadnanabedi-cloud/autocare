@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contact — AutoCare Motors</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo"><h1>AutoCare Motors</h1></div>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cars.html">Cars</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="booking.html">Book Service</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<section class="content">
+  <h2>Get In Touch</h2>
+  <div class="contact-grid">
+    <form id="contactForm">
+      <label for="name">Full name *</label>
+      <input id="name" name="name" required>
+      <label for="company">Company</label>
+      <input id="company" name="company">
+      <label for="email">Email *</label>
+      <input id="email" name="email" type="email" required>
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" pattern="[0-9+\s-]{7,20}">
+      <label for="contact-method">Preferred contact method</label>
+      <select id="contact-method" name="contact-method">
+        <option value="">-- Select --</option>
+        <option value="email">Email</option>
+        <option value="phone">Phone</option>
+      </select>
+      <label for="referral">How did you hear about us?</label>
+      <select id="referral" name="referral">
+        <option value="">-- Select --</option>
+        <option>Internet search</option>
+        <option>Social media</option>
+        <option>Friend or family</option>
+        <option>Advertisement</option>
+        <option>Other</option>
+      </select>
+      <label for="subject">Subject</label>
+      <input id="subject" name="subject">
+      <label for="message">Message *</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <div style="margin-top:12px">
+        <button type="submit">Send Message</button>
+      </div>
+    </form>
+    <div id="contactMessage" class="form-message" aria-live="polite" style="margin-top:10px;"></div>
+    <aside class="contact-info">
+      <h3>Our Location</h3>
+      <p><strong>Address:</strong> Dubai, UAE</p>
+      <p><strong>Email:</strong> info@autocaremotors.com</p>
+      <p><strong>Phone:</strong> +971-XXX-XXXX</p>
+      <p><strong>Fax:</strong> +971-YYY-YYYY</p>
+      <p><strong>Support Email:</strong> support@autocaremotors.com</p>
+      <h4>Business Hours</h4>
+      <p>Mon – Fri: 8 AM – 6 PM<br>Sat: 9 AM – 2 PM<br>Sun: Closed</p>
+      <h4>Connect with us</h4>
+      <p>
+        <a href="#" aria-label="Facebook">Facebook</a> | 
+        <a href="#" aria-label="Twitter">Twitter</a> | 
+        <a href="#" aria-label="Instagram">Instagram</a>
+      </p>
+      <div class="map-container" style="margin-top:12px;">
+        <!-- replace src with actual map embed when available -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>&copy; 2026 AutoCare Motors. All Rights Reserved.</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a> |
+    <a href="cars.html">Cars</a> |
+    <a href="services.html">Services</a> |
+    <a href="booking.html">Book Service</a>
+  </div>
+</footer>
+
+<script>
+// form submission with feedback message
+const contactForm = document.getElementById('contactForm');
+const contactMsg = document.getElementById('contactMessage');
+
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  contactMsg.textContent = '';
+  // basic required check
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const message = document.getElementById('message');
+  if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+    contactMsg.textContent = 'Please complete all required fields.';
+    contactMsg.style.color = 'crimson';
+    return;
+  }
+  contactMsg.textContent = 'Thank you! Your message has been sent (demo).';
+  contactMsg.style.color = 'green';
+  contactForm.reset();
+});
+</script>
+
+</body>
+</html>

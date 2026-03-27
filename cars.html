@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Cars — AutoCare Motors</title>
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+
+<header class="site-header">
+	<div class="logo"><h1>AutoCare Motors</h1></div>
+	<nav class="main-nav">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="cars.html" class="active">Cars</a></li>
+			<li><a href="services.html">Services</a></li>
+			<li><a href="booking.html">Book Service</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+	</nav>
+</header>
+
+<section class="content">
+
+	<h2>Our Inventory</h2>
+	<div class="cars-grid">
+		<article class="car-card" data-available="true">
+            <img class="car-image" src="/Users/kulsumadmanabedi/Downloads/2015_Toyota_Camry_XLE-2.jpg" alt="Toyota Camry 2018">
+			<h3>Toyota Camry (2018)</h3>
+			<p>Reliable sedan — 45,000 km — Excellent condition.</p>
+			<p class="price">AED 45,000</p>
+			<button class="check-availability">Check Availability</button>
+		</article>
+		<article class="car-card" data-available="false">
+            <img class="car-image" src="/Users/kulsumadmanabedi/Downloads/2015_Toyota_Camry_XLE-2.jpg" alt="Honda Civic 2020">
+			<h3>Honda Civic (2020)</h3>
+			<p>Comfort & efficiency — 30,000 km — One owner.</p>
+			<p class="price">AED 62,000</p>
+			<button class="check-availability">Check Availability</button>
+		</article>
+		<article class="car-card" data-available="true">
+            <img class="car-image" src="/Users/kulsumadmanabedi/Downloads/review_201587_1.jpg"alt="Ford F-150 2016">
+			<h3>Ford F-150 (2016)</h3>
+			<p>Workhorse pickup — well maintained.</p>
+			<p class="price">AED 78,000</p>
+			<button class="check-availability">Check Availability</button>
+		</article>
+		<article class="car-card" data-available="true">
+            <img class="car-image" src="/Users/kulsumadmanabedi/Downloads/Unknown-6" alt="BMW 3 Series 2019">
+			<h3>BMW 3 Series (2019)</h3>
+			<p>Sporty and luxurious — 20,000 km.</p>
+			<p class="price">AED 105,000</p>
+			<button class="check-availability">Check Availability</button>
+		</article>
+		<article class="car-card" data-available="true">
+            <img class="car-image" src="/Users/kulsumadmanabedi/Downloads/2017-mercedes.jpg" alt="Mercedes C-Class 2017">
+			<h3>Mercedes C-Class (2017)</h3>
+			<p>Elegant sedan with premium features.</p>
+			<p class="price">AED 98,000</p>
+			<button class="check-availability">Check Availability</button>
+		</article>
+	</div>
+</section>
+
+<footer class="site-footer">
+	<p>&copy; 2026 AutoCare Motors. All Rights Reserved.</p>
+	<div class="footer-links">
+		<a href="index.html">Home</a> |
+		<a href="cars.html">Cars</a> |
+		<a href="services.html">Services</a> |
+		<a href="booking.html">Book Service</a>
+	</div>
+</footer>
+
+<script>
+// simple availability check handler
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.car-card button').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var card = btn.closest('.car-card');
+      var available = card.getAttribute('data-available') === 'true';
+      if (available) {
+        alert('This car is available.');
+      } else {
+        alert('Sorry, this car is currently not available.');
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
